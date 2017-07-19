@@ -1,4 +1,5 @@
 require_relative 'card'
+require 'colorize'
 
 class Guess
   attr_reader :card, :response
@@ -8,10 +9,10 @@ class Guess
   end
 
   def correct?
-    @response == card.answer ? true : false
+    @response.downcase == card.answer.downcase ? true : false
   end
 
   def feedback
-    correct? == true ? "Correct!" : "Incorrect."
+    correct? == true ? "Correct!".colorize(:green) : "Incorrect.".colorize(:red)
   end
 end
