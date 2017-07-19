@@ -28,7 +28,7 @@ class GuessTest < Minitest::Test
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
 
-    assert_equal "Correct!", guess.feedback
+    assert_equal "Correct!".colorize(:green), guess.feedback
   end
 
   def test_it_can_accept_different_card
@@ -56,6 +56,6 @@ class GuessTest < Minitest::Test
     card = Card.new("Which planet is closest to the sun?", "Mercury")
     guess = Guess.new("Saturn", card)
 
-    assert_equal "Incorrect.", guess.feedback
+    assert_equal "Incorrect.".colorize(:red), guess.feedback
   end
 end
