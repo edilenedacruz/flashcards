@@ -14,5 +14,4 @@ class Guess
   def feedback
     correct? == true ? "Correct!" : "Incorrect."
   end
-
 end
