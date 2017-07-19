@@ -56,7 +56,7 @@ class RoundTest < Minitest::Test
     round = Round.new(deck)
     round.record_guess("Juneau")
 
-    assert_equal "Correct!", round.guesses.first.feedback
+    assert_equal "Correct!".colorize(:green), round.guesses.first.feedback
   end
 
   def test_it_can_provide_count_of_correct_guesses
@@ -108,7 +108,7 @@ class RoundTest < Minitest::Test
     round.record_guess("Juneau")
     round.record_guess("2")
 
-    assert_equal "Incorrect.", round.guesses.last.feedback
+    assert_equal "Incorrect.".colorize(:red), round.guesses.last.feedback
   end
 
   def test_it_still_confirms_number_of_correct_guesses
