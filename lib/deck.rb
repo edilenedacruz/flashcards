@@ -1,3 +1,4 @@
+require_relative 'guess'
 class Deck
   attr_reader :cards
   def initialize(cards = Array.new)
